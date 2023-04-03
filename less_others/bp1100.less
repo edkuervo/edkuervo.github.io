@@ -1,0 +1,95 @@
+// +++++++  Menu  ++++++++//
+nav.el-menu {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+}
+.label_menu {
+  position: absolute;
+  display: block;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+}
+// .fijo .menu-ppl {
+// top: 0;
+// }
+  .menu-ppl{
+    position: fixed;
+    top: 0;
+    right: -350px;
+    bottom: 0px;
+    height: 100%;
+    background-color: @bgClaro;
+    z-index: 22;
+    width: 300px;
+    overflow-y: auto;
+    .sombra;
+    .transition(right 0.3s ease-out);
+    p {
+      display: block;
+    }
+    > ul {
+      display: block;
+      white-space: normal;
+      > li {
+	display: block;
+	margin: 0;
+	> a {
+	  padding: 8px 20px;
+	  text-align: right;
+	  color: @color2;
+	  background-color: @bgClaro;
+	  .transition(none);
+	  .font-size(1.2);
+	  &:hover {
+	    background-color: @color1;
+	  }
+	  &::before, &::after {
+	    display: none;
+	  }
+	}
+	&.menu-item-has-children > ul {
+	  position: static;
+	  .opacity(1);
+	  .translate-x(0);
+	  background-color: @bgMedio;
+	  border: none;
+	  a {
+	    text-align: right;
+	    color: @color2;
+	    &:hover, &:focus {
+	      background-color: @color1;
+	    }
+	  }
+	}
+      } // /li
+    } // /ul
+  }
+	
+  #menu_chk:checked + label, .label_menu.verMenu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @bgOscuro;
+    background-color: fade(@bgOscuro, 50%);
+    .menu-ppl{
+      right: 0;
+    }
+    #btn_menu {
+      right: 300px;
+      bottom: auto;
+      top: 0px;
+      background-position: bottom;
+      .border-radius( 5px 0 0 5px );
+      border-right: none;
+      .transition(background-color 0.2s ease-out 0s, right 0.3s ease-out 0s);
+    }
+  }
+  #btn_menu{
+    display: block;
+  }
+// +++++++  End Menu  ++++++++//
+

@@ -1,0 +1,19 @@
+html {
+	font-size: @fontSize - 1;
+}
+body {
+	padding-top: 0;
+}
+.sticky-wrapper {
+	height: auto !important;
+	&.fijo {
+		position: static;
+	}
+}
+header.header {
+	position: static !important;
+	.ancho {
+		min-height: @altura-header - 10;
+	}
+}
+

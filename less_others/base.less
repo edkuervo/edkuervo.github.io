@@ -1,0 +1,81 @@
+//++++++++++++++++++++++++++++++++++++++++++++//
+// ::::::::   @Variables
+//++++++++++++++++++++++++++++++++++++++++++++//
+
+@ancho:						90%;
+@anchoMax:				1200px;
+@maxLogo:					55px;
+@paddingLogo:			30px;
+@altura-header :	@maxLogo + (2*@paddingLogo) - 1;
+
+// Colores
+@color1 :	  #002832;
+@color2 :	  #005E76;
+@color3 :	  #279A8E;
+@color4 :	  #008285;
+@color5 :	  #F7AC11;
+@color6 :   #71AD26;
+@color7 :   #A53200;
+@color8 :   #FBB03B;
+
+@textoComun :	    #676767;
+@textoEspecial :  #000;
+@textoClaro :	    #fff;
+@textoOscuro:	    #333;
+@linkColor :      @color5;
+@bgOscuro :	      #333;
+@bgClaro :        #fff;
+@bgMedio :        #e6e6e6;
+@borde:           #ccc;
+@bordeClaro:      #fff;
+@bordeForm:       #ababab;
+@danger:          #af0202;
+
+// Rutas
+@imgurl:	  '../images/';
+
+// Fuentes
+@fuenteComun:	  'Roboto', sans-serif;
+@fuenteEspecial:  'Raleway', sans-serif;
+@fontSize:	  16px;
+
+
+//++++++++++++++++++++++++++++++++++++++++++++//
+// ::::::::   Reset  
+//++++++++++++++++++++++++++++++++++++++++++++//
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  margin : 0; padding : 0; border : 0; outline : 0; font-size : 100%;
+  vertical-align : baseline; background : transparent; font-weight : 300;
+  line-height: normal;
+  -webkit-box-sizing : border-box;
+  -moz-box-sizing : border-box;
+  -ms-box-sizing : border-box;
+  box-sizing : border-box;
+}
+a {outline : none;}
+table {border-collapse : collapse; border-spacing : 0;}
+img {border : 0; vertical-align : bottom;}
+del,ins {text-decoration : none;}
+abbr,acronym {border:0; font-variant:normal;}
+
+input,button,textarea,select,optgroup,option {font-family:inherit; font-size:inherit; font-style:inherit; font-weight:inherit;}
+input,button,textarea,select {font-size:100%;}
+
+.group:before, .group:after {content:""; display:table;}
+.group:after {clear:both;}
+.ie6 .group {zoom:1;}
+.ie7 .group {zoom:1;}
+
+.contenido {
+  ul {
+    padding-left: 30px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.clear {
+  clear: both;
+}

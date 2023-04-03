@@ -1,0 +1,322 @@
+.border-box(@box : border-box) {
+  -webkit-box-sizing:   @box;
+  -moz-box-sizing:      @box;
+  -ms-box-sizing:	@box;
+  box-sizing:		@box;
+	
+}
+.primera-palabra {
+  word-spacing: 100vw;
+  &::first-line{
+    color: @color2;
+    .font-size(1.3);
+    line-height: 22px;
+  }
+}
+.font-size(@size: 1) {
+  @pixel : @size * @fontSize;
+  font-size: @pixel;
+  font-size: ~"@{size}rem";
+}
+.bg-size(@size){
+  -webkit-background-size:  @size;
+  -moz-background-size:	    @size;
+  -o-background-size:	    @size;
+  background-size:	    @size;
+}
+.btn-size(@size) {
+  width:	@size;
+  height:	@size;
+  line-height:	@size;
+}
+.dimension(@ancho, @alto) {
+  width:    @ancho;
+  height:   @alto;
+}
+.clearfix {
+  *zoom : 1;
+  &:before, &:after {
+    display: table;
+    content : ""; 
+  }
+  &:after {
+    clear : both; 
+  } 
+}
+.titulo-especial{
+  font-family: @fuenteEspecial;
+  .font-size(1.4);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  color: @textoComun;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20px;
+    left: 0;
+    height: 100%;
+    margin-right: -40px;
+    border-bottom: 2px solid @color5;
+  }
+}
+.transition(@propiedades) {
+  -webkit-transition:	@propiedades;
+  -moz-transition: 	@propiedades;
+  -o-transition:	@propiedades;
+  transition: 		@propiedades;
+}
+.transition(@propiedades1, @propiedades2) {
+  -webkit-transition:	@propiedades1, @propiedades2;
+  -moz-transition: 	@propiedades1, @propiedades2;
+  -o-transition:	@propiedades1, @propiedades2;
+  transition: 		@propiedades1, @propiedades2;
+}
+.transition(@propiedades1, @propiedades2, @propiedades3) {
+  -webkit-transition:	@propiedades1, @propiedades2, @propiedades3;
+  -moz-transition: 	@propiedades1, @propiedades2, @propiedades3;
+  -o-transition:	@propiedades1, @propiedades2, @propiedades3;
+  transition: 		@propiedades1, @propiedades2, @propiedades3;
+}
+.sombra(@ejeX: 0, @ejeY: 0, @desenf: 15, @propaga: 0, @alpha: 0.3) {
+  -webkit-box-shadow:	~"@{ejeX}px @{ejeY}px @{desenf}px @{propaga}px rgba(0,0,0,@{alpha})";
+  -moz-box-shadow: 	~"@{ejeX}px @{ejeY}px @{desenf}px @{propaga}px rgba(0,0,0,@{alpha})";
+  box-shadow: 		~"@{ejeX}px @{ejeY}px @{desenf}px @{propaga}px rgba(0,0,0,@{alpha})";
+}
+// Gradientes y algunos ejemplos de uso
+//.gradient(linear; #2BC0E4, #EAECC6 30%); 
+
+// Changing the gradient direction should be done with an angle value instead of its keyword counterpart:
+// .gradient(linear; #2BC0E4, #EAECC6 30%; 180deg);
+
+// The following is an example in which we create a radial gradient:
+// .gradient(circle; #2BC0E4, #EAECC6);
+
+// Generating a repeating gradient? No problemo:
+// .gradient(repeating-linear; #085078, #2BC0E4 25px, #EAECC6 50px);
+// In this case, make sure you adjust the background-size accordingly to see the desired result
+
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+    .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+ 
+    @prefix  : extract(@prefixes, @index);
+    @dir-old : 90 - (@dir);
+ 
+    background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  & when ( @index = length(@prefixes) ) {
+        background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+    }
+}
+.radial-gradient(@position: center; @colores) {
+  background-image:   -webkit-radial-gradient(@position, @colores);
+  background-image:	 -moz-radial-gradient(@position, @colores);
+  background-image:	  -ms-radial-gradient(@position, @colores);
+  background-image:	   -o-radial-gradient(@position, @colores);
+  background-image:	      radial-gradient(@position, @colores);
+}
+.border-radius(@radio : 0px) {
+  -webkit-border-radius:  @radio;
+  border-radius:	  @radio;
+}
+.opacity(@opa) {
+  @alpha : @opa * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{alpha})";
+  filter: alpha(opacity=@alpha);
+  -khtml-opacity: @opa;
+  -moz-opacity:	  @opa;
+  opacity:	  @opa;
+}
+.anchoMax {
+  width: @ancho;
+  max-width: @anchoMax;
+  margin-right: auto;
+  margin-left: auto;
+}
+.render-img {
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+}
+.translate-x(@mover) {
+  -webkit-transform:	translateX(@mover);
+  -moz-transform: 	translateX(@mover);
+  -ms-transform:	translateX(@mover);
+  -o-transform:		translateX(@mover);
+  transform:		translateX(@mover);
+}
+.translate-y(@mover) {
+  -webkit-transform: 	translateY(@mover);
+  -moz-transform: 	translateY(@mover);
+  -ms-transform:	translateY(@mover);
+  -o-transform:		translateY(@mover);
+  transform:		translateY(@mover);
+}
+.translate(@mover-x, @mover-y) {
+  -webkit-transform: 	translate(@mover-x, @mover-y);
+  -moz-transform: 	translate(@mover-x, @mover-y);
+  -ms-transform:	translate(@mover-x, @mover-y);
+  -o-transform:		translate(@mover-x, @mover-y);
+  transform:		translate(@mover-x, @mover-y);
+}
+
+// li con icono y vinculo
+.li-icono(@size) {
+  position: relative;
+  &::before {
+    display: block;
+    text-align: center;
+    .btn-size(@size);
+  }
+  a {
+    font-size: 0;
+    position: absolute;
+    .btn-size(@size);
+    top: 0;
+    left: 0;
+  }
+}
+.filter(@filtro) {
+  -webkit-filter:   @filtro;
+  filter:	    @filtro;
+}
+
+// Agregamos (...) al texto que queda escondido 
+.text-overflow() {
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap; 
+}
+
+
+// Esconder texto, para reemplazar con imagen
+.esconder-texto {
+  text-indent : 100%;
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+// Esconder visualmente del navegador
+.esconder {
+  display : none !important; 
+  visibility : hidden; 
+}
+
+// Esconder pero manteniendo el layout
+  .invisible() { 
+  visibility : hidden; 
+ }
+
+// Esconder pero dejar visible para navegadores de voz (Screenreaders)
+.visualmenteescondido() { 
+  overflow : hidden; 
+  position : absolute;
+  clip : rect(0 0 0 0); 
+  height : 1px; 
+  width : 1px;
+  margin : -1px; 
+  padding : 0; 
+  border : 0; 
+}
+
+// Esconder pero permitir hacerle target con el teclado
+.visualmenteescondido.focusable:active, 
+.visualmenteescondido.focusable:focus { 
+  position : static;
+  clip : auto; 
+  height : auto; 
+  width : auto;
+  margin : 0; 
+  overflow: visible; 
+}
+
+// Grid
+.my-grid(@margin : 10px) {
+  display: block;
+  margin: 0 -@margin;
+  text-align: center;
+  .clearfix;
+}
+.my-column(@cols : 12, @padding : 10px) {
+  @ancho : @cols * 100 / 12;
+  width: ~"@{ancho}%";
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 @padding;
+  margin: 10px -2px;
+  text-align: left;
+}
+
+.proporcional(@ancho, @alto) {
+  @porcentaje : @alto * 100 / @ancho;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ~"@{porcentaje}%";
+  }
+  > img, > video, > a > img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    z-index: 10;
+    .translate-y(-50%);
+  }
+  a {
+    display: block;
+    height: 100%;	
+  }
+}
+
+.btn, a.btn, a.btn:visited {
+  display: inline-block;
+  margin: 4px;
+  background-color: darken(@color2,10);
+  color: @textoClaro;
+  border: none;
+  padding: 8px 20px;
+  position: relative;
+  font-weight: 300;
+  .border-radius(4px);
+  .font-size(1);
+  cursor: pointer;
+  .transition(all 0.2s);
+  &:hover {
+    background-color: @color2;
+    color: @textoClaro;
+  }
+  &.claro {
+    background-color: @bgClaro;
+  }
+}
+.btn-claro{
+  .btn;
+  background-color: @bgClaro;
+  &::before {
+    border-color: @bgClaro;
+  }
+  &:hover {
+    background-color: darken(@bgClaro, 5);
+  }
+}
+
+.texto-resaltado {
+  .font-size(1.6);
+  color: @color2;
+  font-weight: 400;
+  text-align: center;
+}
+
+// Separar en columnas
+.separa-cols(@cols, @gap) {
+  -webkit-column-count:	  @cols;
+  -moz-column-count:	  @cols;
+  column-count:		  @cols;
+  -webkit-column-gap:	@gap;
+  -moz-column-gap:	@gap;
+  column-gap:		@gap;
+}
