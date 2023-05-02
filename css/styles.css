@@ -1,4 +1,68 @@
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -288,18 +352,6 @@ img {
   position: absolute;
   top: 114px;
 }
-header {
-  position: absolute;
-  width: 100% !important;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #F7AC11;
-}
-header .ancho {
-  display: table;
-  position: relative;
-}
 .fijo header {
   z-index: 100 !important;
   background-color: rgba(247, 172, 17, 0.9);
@@ -329,11 +381,6 @@ header .ancho {
   100% {
     top: 0px;
   }
-}
-.head-right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
 }
 nav.el-menu {
   display: inline-block;
