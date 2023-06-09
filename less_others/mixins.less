@@ -98,7 +98,7 @@
 // .gradient(repeating-linear; #085078, #2BC0E4 25px, #EAECC6 50px);
 // In this case, make sure you adjust the background-size accordingly to see the desired result
 
-.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+.gradient(@type; @colors; @dir: 0deg; @prefixes: "webkit,moz,ms,o"; @index: length(@prefixes)) when (@index > 0) {
     .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
  
     @prefix  : extract(@prefixes, @index);

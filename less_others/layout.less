@@ -1,6 +1,8 @@
 // ++++++++++++++++++++++++++++++++++++++++++++++++ //
 
 //  * Generales
+//  * Aside
+//  * Main
 //  * Header
 //  * Main
 //  * Footer
@@ -13,35 +15,49 @@
 // ::::::::   @Generales
 //++++++++++++++++++++++++++++++++++++++++++++//
 html {
-	height:100%;
-	margin-bottom:1px;
-	overflow-y:scroll;
-	overflow-x: hidden;
-	font-size: @fontSize;
+  height:100%;
+  margin-bottom:1px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: @fontSize;
 }
-	body {
-		height:100%;
-		// padding-top: @altura-header;
-		// background-color: @color1;
-		// color: @textoComun;
-		// font-family: @fuenteComun;
-		// font-weight: 300;
-		// .font-size(1);
-		text-align:left;
-	}
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-	.ancho {
-		.anchoMax;
-	}
+  body {
+    height:100%;
+    background-color: @color1;
+    color: @textoComun;
+    // font-family: @fuenteComun;
+    // font-weight: 300;
+    // .font-size(1);
+    text-align:left;
+    .my-grid();
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .ancho {
+    .anchoMax;
+  }
 
+//++++++++++++++++++++++++++++++++++++++++++++//
+// ::::::::   Aside
+//++++++++++++++++++++++++++++++++++++++++++++//
+aside {
+  .my-column(4,10);
+}
 
+//++++++++++++++++++++++++++++++++++++++++++++//
+// ::::::::   Main
+//++++++++++++++++++++++++++++++++++++++++++++//
+main {
+  .my-column(8,10);
+}
+  
+  
 //++++++++++++++++++++++++++++++++++++++++++++//
 // ::::::::   Header
 //++++++++++++++++++++++++++++++++++++++++++++//
-	.sticky-wrapper {
+	/*.sticky-wrapper {
 		max-height: 0;
 		display: table;
 		width: 100%;
@@ -51,7 +67,7 @@ html {
 		max-height: none;
 		position: absolute;
 		top: @altura-header;
-	}
+	}*/
     header {
 			
 		}
